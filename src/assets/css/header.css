@@ -1,0 +1,37 @@
+.header {
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--pink);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  box-shadow: 1px 1px 10px rgba(82, 109, 194, 0.1);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.header > .logo {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.header > .logo img {
+  width: 22px;
+  cursor: pointer;
+}
+
+.header > .logout {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.header > .logout button {
+  border: 0;
+  background: transparent;
+  color: var(--base-light);
+  cursor: pointer;
+}
