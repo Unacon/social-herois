@@ -18,8 +18,14 @@ function Login() {
     setInputText(value);
   }
 
+  function handleEnter(event: any) {
+    //React.SyntheticEvent<Element>
+    if (event.charCode === 13) {
+      handleClick();
+    }
+  }
+
   function handleClick() {
-    console.log("Botao login clicado");
     dispatch(getGithubUserApi(inputText));
   }
 
@@ -47,6 +53,7 @@ function Login() {
           className="github-input"
           placeholder="Type your GitHub user"
           onChange={handleChange}
+          onKeyPress={handleEnter}
           value={inputText}
         ></input>
         <button

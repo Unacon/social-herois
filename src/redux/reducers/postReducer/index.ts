@@ -3,9 +3,9 @@ import loginAPI from "./api";
 import { parseUser } from "./helpers";
 
 const LOGIN_ACTIONS_TYPES = {
-  GET_GITHUB_USER: "@LoginReducer/GET_GITHUB_USER",
-  GET_GITHUB_USER_SUCCESS: "@LoginReducer/GET_GITHUB_USER_SUCCESS",
-  GET_GITHUB_USER_ERROR: "@LoginReducer/GET_GITHUB_USER_ERROR",
+  GET_GITHUB_USER: "@PostReducer/GET_GITHUB_USER",
+  GET_GITHUB_USER_SUCCESS: "@PostReducer/GET_GITHUB_USER_SUCCESS",
+  GET_GITHUB_USER_ERROR: "@PostReducer/GET_GITHUB_USER_ERROR",
 };
 
 const INITIAL_STATE: LoginState = {
@@ -14,10 +14,7 @@ const INITIAL_STATE: LoginState = {
   error: null,
 };
 
-export default function LoginReducer(
-  state = INITIAL_STATE,
-  action
-): LoginState {
+export default function PostReducer(state = INITIAL_STATE, action): LoginState {
   switch (action.type) {
     case LOGIN_ACTIONS_TYPES.GET_GITHUB_USER: {
       return {

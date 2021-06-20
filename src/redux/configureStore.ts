@@ -4,9 +4,11 @@ import * as ReactRedux from "react-redux";
 import ReduxThunk from "redux-thunk";
 
 import loginReducer from "./reducers/loginReducer";
+import postReducer from "./reducers/postReducer";
 
 const reducers = {
   Login: loginReducer,
+  Post: postReducer,
 };
 
 const rootReducer = Redux.combineReducers(reducers);
