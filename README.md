@@ -1,7 +1,14 @@
 # 🦸 Social-Heroes
+    
+<p align="center">
+  <a href="#-tecnologias">✨ Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">💻 Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-executar"> 🚀Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
 
-
-  [✨ Tecnologias](#-tecnologias) | [💻 Projeto](#-projeto) | [🚀 Como executar](#-como-executar)
+<p align="center">
+  <img alt="Tela Inicial" src="github/TelaInicial.jpg" width="100%">
+</p>
   
 ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -33,6 +40,14 @@ Necessita da conta do [GitHub](https://github.com/) para entrar na rede social.
 - Instale as dependências com `npm`
 - Inicie o servidor local `npm run server`
 - Inicie o projeto `npm run start`
+
+## 🚧 Em Construção
+
+- Responsividade
+- Site
+- Versão PWA
+- Tema dark
+- Página inicial
 
 Feito com ❤️ por João Vitor 👋
 
