@@ -1,12 +1,12 @@
-async function getGithubUser(username: string) {
-  const response = await fetch(`https://api.github.com/users/${username}`);
-  const user = await response.json();
+async function getPosts() {
+  const response = await fetch(`http://localhost:8080/posts`);
+  const posts = await response.json();
 
-  return user;
+  return posts;
 }
 
-const loginAPI = {
-  getGithubUser,
+const postsAPI = {
+  getPosts,
 };
 
-export default loginAPI;
+export default postsAPI;

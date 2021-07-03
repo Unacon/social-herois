@@ -18,14 +18,8 @@ function Login() {
     setInputText(value);
   }
 
-  function handleEnter(event: any) {
-    //React.SyntheticEvent<Element>
-    if (event.charCode === 13) {
-      handleClick();
-    }
-  }
-
-  function handleClick() {
+  function handleClick(event: React.FormEvent) {
+    event.preventDefault();
     dispatch(getGithubUserApi(inputText));
   }
 
@@ -46,23 +40,19 @@ function Login() {
             {loginState.error}
           </label>
         )}
-
-        <input
-          type="text"
-          id="github-input"
-          className="github-input"
-          placeholder="Type your GitHub user"
-          onChange={handleChange}
-          onKeyPress={handleEnter}
-          value={inputText}
-        ></input>
-        <button
-          className="github-button"
-          onClick={handleClick}
-          disabled={!inputText}
-        >
-          Login
-        </button>
+        <form onSubmit={handleClick}>
+          <input
+            type="text"
+            id="github-input"
+            className="github-input"
+            placeholder="Type your GitHub user"
+            onChange={handleChange}
+            value={inputText}
+          ></input>
+          <button className="github-button" type="submit" disabled={!inputText}>
+            Login
+          </button>
+        </form>
       </div>
     </section>
   );

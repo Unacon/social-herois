@@ -6,6 +6,7 @@ const LOGIN_ACTIONS_TYPES = {
   GET_GITHUB_USER: "@LoginReducer/GET_GITHUB_USER",
   GET_GITHUB_USER_SUCCESS: "@LoginReducer/GET_GITHUB_USER_SUCCESS",
   GET_GITHUB_USER_ERROR: "@LoginReducer/GET_GITHUB_USER_ERROR",
+  CLEAR_GITHUB_USER: "@LoginReducer/CLEAR__GITHUB_USER",
 };
 
 const INITIAL_STATE: LoginState = {
@@ -41,6 +42,14 @@ export default function LoginReducer(
         status: action.payload.status,
         user: action.payload.user,
         error: action.payload.error,
+      };
+    }
+    case LOGIN_ACTIONS_TYPES.CLEAR_GITHUB_USER: {
+      return {
+        ...state,
+        status: "idle",
+        user: null,
+        error: null,
       };
     }
     default:
@@ -99,5 +108,11 @@ function getGithubUserError(erro: string) {
       user: null,
       error: erro,
     },
+  };
+}
+
+export function getGithubUserClear() {
+  return {
+    type: LOGIN_ACTIONS_TYPES.CLEAR_GITHUB_USER,
   };
 }

@@ -1,14 +1,11 @@
 import React from "react";
 
-function PostContent() {
-  return (
-    <div className="post-content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sed
-      mollitia perferendis vitae tenetur. Perferendis, enim? Eaque inventore
-      repellendus cumque nostrum eum? Voluptates ab mollitia fugit voluptate
-      vitae quaerat architecto?
-    </div>
-  );
+type PostContentType = {
+  content: string;
+};
+
+function PostContent(props: PostContentType) {
+  return <div className="post-content">{props.content}</div>;
 }
 
 export default PostContent;

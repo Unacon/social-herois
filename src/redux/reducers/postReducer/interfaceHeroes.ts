@@ -1,14 +1,29 @@
-export interface User {
+export interface Author {
   id: number;
-  image: string;
   name: string;
-  followers: number;
-  following: number;
-  message: string;
+  image: string;
 }
 
-export interface LoginState {
+export interface Comment {
+  id: string;
+  image: string;
+  name: string;
+  comment: string;
+}
+
+export interface Post {
+  id: string;
+  author: Author;
+  post: {
+    date: number;
+    content: string;
+    image: string;
+    likes: number;
+    comments: Array<Comment>;
+  };
+}
+
+export interface PostState {
   status: "idle" | "loading" | "success" | "error";
-  user: User;
-  error: string;
+  posts: Post[];
 }

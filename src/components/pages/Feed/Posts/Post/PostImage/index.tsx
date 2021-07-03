@@ -1,12 +1,14 @@
 import React from "react";
 
-import BatmanPost from "../../../../../../assets/img/batman-post.jpg";
+type PostImageType = {
+  image: string;
+};
 
-function PostImage() {
+function PostImage(props: PostImageType) {
   return (
     <div className="post-image">
       <div className="post-image-board">
-        <img src={BatmanPost} alt="Batman imagem" />
+        <img src={props.image} alt="Batman imagem" />
       </div>
     </div>
   );

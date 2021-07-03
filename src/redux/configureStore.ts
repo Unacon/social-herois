@@ -5,10 +5,14 @@ import ReduxThunk from "redux-thunk";
 
 import loginReducer from "./reducers/loginReducer";
 import postReducer from "./reducers/postReducer";
+import UIReducer from "./reducers/UIReducer";
+import postCommentReducer from "./reducers/postCommentReducer";
 
 const reducers = {
   Login: loginReducer,
   Post: postReducer,
+  PostComment: postCommentReducer,
+  UI: UIReducer,
 };
 
 const rootReducer = Redux.combineReducers(reducers);

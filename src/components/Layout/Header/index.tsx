@@ -1,15 +1,16 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-import { PATHS } from "../../../config/paths";
 import { useAppSelect } from "../../../redux/configureStore";
 
 import FacebookLogo from "../../../assets/img/facebook-logo.svg";
+import { useDispatch } from "react-redux";
+import { getGithubUserClear } from "../../../redux/reducers/loginReducer/index";
 
 function Header() {
+  const dispatch = useDispatch();
   const user = useAppSelect((state) => state.Login.user);
 
   function handleLogout() {
-    return <Redirect to={PATHS.LOGIN} />;
+    dispatch(getGithubUserClear());
   }
 
   return (

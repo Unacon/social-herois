@@ -1,43 +1,38 @@
-import { User, LoginState } from "./interfaceHeroes";
-import loginAPI from "./api";
-import { parseUser } from "./helpers";
+import { Post, PostState } from "./interfaceHeroes";
+import postsAPI from "./api";
 
 const LOGIN_ACTIONS_TYPES = {
-  GET_GITHUB_USER: "@PostReducer/GET_GITHUB_USER",
-  GET_GITHUB_USER_SUCCESS: "@PostReducer/GET_GITHUB_USER_SUCCESS",
-  GET_GITHUB_USER_ERROR: "@PostReducer/GET_GITHUB_USER_ERROR",
+  GET_POSTS: "@PostReducer/GET_POSTS",
+  GET_POSTS_SUCCESS: "@PostReducer/GET_POSTS_SUCCESS",
+  GET_POSTS_ERROR: "@PostReducer/GET_POSTS_ERROR",
 };
 
-const INITIAL_STATE: LoginState = {
+const INITIAL_STATE: PostState = {
   status: "idle",
-  user: null,
-  error: null,
+  posts: [],
 };
 
-export default function PostReducer(state = INITIAL_STATE, action): LoginState {
+export default function PostReducer(state = INITIAL_STATE, action): PostState {
   switch (action.type) {
-    case LOGIN_ACTIONS_TYPES.GET_GITHUB_USER: {
+    case LOGIN_ACTIONS_TYPES.GET_POSTS: {
       return {
         ...state,
         status: action.payload.status,
-        user: action.payload.user,
-        error: null,
+        posts: action.payload.posts,
       };
     }
-    case LOGIN_ACTIONS_TYPES.GET_GITHUB_USER_SUCCESS: {
+    case LOGIN_ACTIONS_TYPES.GET_POSTS_SUCCESS: {
       return {
         ...state,
         status: action.payload.status,
-        user: action.payload.user,
-        error: null,
+        posts: action.payload.posts,
       };
     }
-    case LOGIN_ACTIONS_TYPES.GET_GITHUB_USER_ERROR: {
+    case LOGIN_ACTIONS_TYPES.GET_POSTS_ERROR: {
       return {
         ...state,
         status: action.payload.status,
-        user: action.payload.user,
-        error: action.payload.error,
+        posts: action.payload.posts,
       };
     }
     default:
@@ -45,56 +40,47 @@ export default function PostReducer(state = INITIAL_STATE, action): LoginState {
   }
 }
 
-export function getGithubUserApi(username: string) {
+export function getPostApi() {
   return async (dispatch) => {
     try {
-      const getGithubUserAction = getGithubUser();
-      dispatch(getGithubUserAction);
+      dispatch(getPosts());
 
-      const githubUser = await loginAPI.getGithubUser(username);
-      if (githubUser.login) {
-        const user: User = parseUser(githubUser);
-        console.log({ user });
-        const getGithubUserSuccessAction = getGithubUserSuccess(user);
-        dispatch(getGithubUserSuccessAction);
-      } else {
-        throw new Error(githubUser.message);
-      }
+      const posts = await postsAPI.getPosts();
+      console.log(posts);
+      dispatch(getPostsSuccess(posts));
     } catch (error) {
-      console.log(error);
-      const getGithubUserErrorAction = getGithubUserError(error.message);
+      const getGithubUserErrorAction = getPostsError();
       dispatch(getGithubUserErrorAction);
     }
   };
 }
 
-function getGithubUser() {
+function getPosts() {
   return {
-    type: LOGIN_ACTIONS_TYPES.GET_GITHUB_USER,
+    type: LOGIN_ACTIONS_TYPES.GET_POSTS,
     payload: {
       status: "loading",
-      user: null,
+      posts: [],
     },
   };
 }
 
-function getGithubUserSuccess(user: User) {
+function getPostsSuccess(post: Post[]) {
   return {
-    type: LOGIN_ACTIONS_TYPES.GET_GITHUB_USER_SUCCESS,
+    type: LOGIN_ACTIONS_TYPES.GET_POSTS_SUCCESS,
     payload: {
       status: "success",
-      user: user,
+      posts: post,
     },
   };
 }
 
-function getGithubUserError(erro: string) {
+function getPostsError() {
   return {
-    type: LOGIN_ACTIONS_TYPES.GET_GITHUB_USER_ERROR,
+    type: LOGIN_ACTIONS_TYPES.GET_POSTS_ERROR,
     payload: {
       status: "error",
-      user: null,
-      error: erro,
+      posts: [],
     },
   };
 }
