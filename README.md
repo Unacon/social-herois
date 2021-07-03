@@ -5,10 +5,6 @@
   <a href="#-projeto">💻 Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-executar"> 🚀Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
-
-<p align="center">
-  <img alt="Tela Inicial" src=".github/TelaInicial.jpg" width="100%">
-</p>
   
 ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -18,6 +14,10 @@
 ![image](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 
 Essa projeto é uma rede social de heróis, necessita de conta no [GitHub](https://github.com/) para acessar.
+
+<p align="center">
+  <img alt="Tela Inicial" src=".github/TelaInicial.jpg" width="100%">
+</p>
 
 ## ✨ Tecnologias
 
