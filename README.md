@@ -46,7 +46,6 @@ Necessita da conta do [GitHub](https://github.com/) para entrar na rede social.
 - Responsividade
 - Site
 - Versão PWA
-- Tema dark
 - Página inicial
 
 Feito com ❤️ por João Vitor 👋
