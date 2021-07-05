@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 
 function Routes() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact={true} path={PATHS.ROOT}>
           <Login />

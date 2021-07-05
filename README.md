@@ -24,8 +24,8 @@ Essa projeto é uma rede social de heróis, necessita de conta no [GitHub](https
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [React](https://reactjs.org)
-- [Node.js](https://nodejs.org/)
 - [Redux](https://redux.js.org/)
+- [Node.js](https://nodejs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 
 ## 💻 Projeto
@@ -43,14 +43,15 @@ Necessita da conta do [GitHub](https://github.com/) para entrar na rede social.
 
 ## 🚧 Em Construção
 
-- Responsividade
-- Site
+- ✅ Responsividade
+- ✅ Site
 - Versão PWA
 - Página inicial
 - Aplicar LocalStorage
 - Deletar comentários
 - Mecanismo de like
 - Criação de Post
+- Banco de dados para os comentários
 
 Feito com ❤️ por João Vitor 👋
 
