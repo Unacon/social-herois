@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/social-herois/static/css/main.370e77ee.chunk.css",
+    "main.js": "/social-herois/static/js/main.d50dbd12.chunk.js",
+    "main.js.map": "/social-herois/static/js/main.d50dbd12.chunk.js.map",
+    "runtime-main.js": "/social-herois/static/js/runtime-main.0a29959f.js",
+    "runtime-main.js.map": "/social-herois/static/js/runtime-main.0a29959f.js.map",
+    "static/js/2.d85a5d21.chunk.js": "/social-herois/static/js/2.d85a5d21.chunk.js",
+    "static/js/2.d85a5d21.chunk.js.map": "/social-herois/static/js/2.d85a5d21.chunk.js.map",
+    "static/js/3.eac84339.chunk.js": "/social-herois/static/js/3.eac84339.chunk.js",
+    "static/js/3.eac84339.chunk.js.map": "/social-herois/static/js/3.eac84339.chunk.js.map",
+    "index.html": "/social-herois/index.html",
+    "static/css/main.370e77ee.chunk.css.map": "/social-herois/static/css/main.370e77ee.chunk.css.map",
+    "static/js/2.d85a5d21.chunk.js.LICENSE.txt": "/social-herois/static/js/2.d85a5d21.chunk.js.LICENSE.txt",
+    "static/media/comment.623ffc81.svg": "/social-herois/static/media/comment.623ffc81.svg",
+    "static/media/facebook-logo.e9ead55f.svg": "/social-herois/static/media/facebook-logo.e9ead55f.svg",
+    "static/media/github-logo.81d10f54.svg": "/social-herois/static/media/github-logo.81d10f54.svg",
+    "static/media/like.c956de34.svg": "/social-herois/static/media/like.c956de34.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0a29959f.js",
+    "static/js/2.d85a5d21.chunk.js",
+    "static/css/main.370e77ee.chunk.css",
+    "static/js/main.d50dbd12.chunk.js"
+  ]
+}
