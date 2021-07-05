@@ -50,7 +50,7 @@ Necessita da conta do [GitHub](https://github.com/) para entrar na rede social.
 - Aplicar LocalStorage
 - Deletar comentários
 - Mecanismo de like
-- Criação da Post
+- Criação de Post
 
 Feito com ❤️ por João Vitor 👋
 
