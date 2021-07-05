@@ -1,6 +1,9 @@
 import { Post, PostState } from "./interfaceHeroes";
 import postsAPI from "./api";
 
+import { POST_COMMENT_ACTIONS_TYPES } from "../postCommentReducer/index";
+import { replacePost } from "./helpers";
+
 const LOGIN_ACTIONS_TYPES = {
   GET_POSTS: "@PostReducer/GET_POSTS",
   GET_POSTS_SUCCESS: "@PostReducer/GET_POSTS_SUCCESS",
@@ -33,6 +36,14 @@ export default function PostReducer(state = INITIAL_STATE, action): PostState {
         ...state,
         status: action.payload.status,
         posts: action.payload.posts,
+      };
+    }
+    case POST_COMMENT_ACTIONS_TYPES.SEND_COMMENT_SUCCESS: {
+      console.log(action, state);
+      const newPosts = replacePost(state, action);
+      return {
+        ...state,
+        posts: newPosts,
       };
     }
     default:

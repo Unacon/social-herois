@@ -2,8 +2,9 @@ import { PostCommentState } from "./interfaceHeroes";
 import postCommentAPI from "./api";
 import { Post } from "../postReducer/interfaceHeroes";
 import { RootState } from "../../configureStore";
+import { creatComment } from "./helpers";
 
-const POST_COMMENT_ACTIONS_TYPES = {
+export const POST_COMMENT_ACTIONS_TYPES = {
   SEND_COMMENT: "@postCommentReducer/SEND_COMMENT",
   SEND_COMMENT_SUCCESS: "@postCommentReducer/SEND_COMMENT_SUCCESS",
   SEND_COMMENT_ERROR: "@postCommentReducer/SEND_COMMENT_ERROR",
@@ -46,20 +47,15 @@ export function sendPostCommentAPI(post: Post, comment: string) {
     try {
       dispatch(sendComment());
 
-      const id = Math.floor(Math.random() * 999).toString();
       const state: RootState = getState();
-      const { image, name } = state.Login.user;
-      const newComment = {
-        id: id,
-        image: image,
-        name: name,
-        comment: comment,
-      };
+      const newComment = creatComment(comment, state.Login.user);
 
-      console.log({ newComment });
+      const newPost = { ...post };
+      newPost.post.comments.push(newComment);
 
-      //const newPost = await postCommentAPI.sendComment(post);
-      dispatch(sendCommentSuccess());
+      const newPostResponse = await postCommentAPI.sendComment(newPost);
+
+      dispatch(sendCommentSuccess(newPostResponse));
     } catch (error) {
       const getGithubUserErrorAction = sendCommentError();
       dispatch(getGithubUserErrorAction);
@@ -76,11 +72,12 @@ function sendComment() {
   };
 }
 
-function sendCommentSuccess() {
+function sendCommentSuccess(post: Post) {
   return {
     type: POST_COMMENT_ACTIONS_TYPES.SEND_COMMENT_SUCCESS,
     payload: {
       status: "success",
+      post: post,
     },
   };
 }

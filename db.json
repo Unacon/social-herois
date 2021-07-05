@@ -18,6 +18,12 @@
             "image": "./assets/img/spider-man.png",
             "name": "Spider Man",
             "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend id massa quis condimentum"
+          },
+          {
+            "id": "961",
+            "image": "https://avatars.githubusercontent.com/u/42275101?v=4",
+            "name": "Unacon",
+            "comment": "teste"
           }
         ]
       }

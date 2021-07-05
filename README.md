@@ -1,5 +1,5 @@
 # 🦸 Social-Heroes
-    
+
 <p align="center">
   <a href="#-tecnologias">✨ Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">💻 Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -48,6 +48,10 @@ Necessita da conta do [GitHub](https://github.com/) para entrar na rede social.
 - Versão PWA
 - Tema dark
 - Página inicial
+- Aplicar LocalStorage
+- Deletar comentários
+- Mecanismo de like
+- Criação da Post
 
 Feito com ❤️ por João Vitor 👋
 

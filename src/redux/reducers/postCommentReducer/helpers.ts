@@ -1,10 +1,17 @@
-export function parseUser(githuUser: any) {
-  return {
-    id: githuUser.id,
-    name: githuUser.login,
-    image: githuUser.avatar_url,
-    followers: githuUser.followers,
-    following: githuUser.following,
-    message: githuUser.message,
+import { RootState } from "../../configureStore";
+
+export function creatComment(
+  comment: string,
+  user: RootState["Login"]["user"]
+) {
+  const id = Math.floor(Math.random() * 999).toString();
+  const { image, name } = user;
+  const newComment = {
+    id: id,
+    image: image,
+    name: name,
+    comment: comment,
   };
+
+  return newComment;
 }

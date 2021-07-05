@@ -9,7 +9,7 @@ function Routes() {
     <Router>
       <Switch>
         <Route exact={true} path={PATHS.ROOT}>
-          <h1>Root</h1>
+          <Login />
         </Route>
 
         <Route path={PATHS.LOGIN}>
